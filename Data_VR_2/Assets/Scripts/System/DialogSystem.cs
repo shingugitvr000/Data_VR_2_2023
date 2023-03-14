@@ -34,14 +34,13 @@ public class DialogSystem : MonoBehaviour
             DialogInit = false;
         }
 
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButtonDown(0))
         {
             if(isTypingEffect == true)
             {
                 isTypingEffect = false;
                 StopCoroutine("OnTypingText");
-                speakers[currentSpeakerIndex].textDialogue.text
-                    = dialogs[currentDialogIndex].dialogue;
+                speakers[currentSpeakerIndex].textDialogue.text = dialogs[currentDialogIndex].dialogue;
 
                 speakers[currentSpeakerIndex].objectArrow.SetActive(true);
                 return false;
